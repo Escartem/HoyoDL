@@ -9,7 +9,7 @@ class HoyoDL:
 		self.provider = provider
 
 		self.config = {
-			"defaultProvider": "https://ena.escartem.moe/hoyodl/data.json"
+			"defaultProvider": "https://raw.githubusercontent.com/umaichanuwu/meta/master/hoyodata.json"
 		}
 
 		if not self.provider:

@@ -113,7 +113,7 @@ To get all cutscenes files :
 >>> files = client.getAllCutscenesFiles()
 ```
 
-ℹ️ When running any of these functions for the first time may take a few additional seconds as the tool is fetching the list, afterwards it will be cached for future calls until the game or version is changed
+ℹ️ When running any of these functions for the first time, it may take a few additional seconds as the tool is fetching the files list, afterwards it will be cached for future calls until the game or version is changed.
 
 ## Getting miscellaneous information
 
@@ -126,7 +126,7 @@ After selecting a game and version, you can get the date of when this version wa
 "April 29th, 2022 at 11:24:15"
 ```
 
-You can also get the timestamp directly if you don't want the formatted date, the output will be in the form `YYYYmmddHHMMSS` :
+You can also get the date as number directly if you don't want the formatted one, the output will be in the form `YYYYmmddHHMMSS` :
 
 ```py
 >>> date = client.getReleaseDate(raw=True)
@@ -144,7 +144,7 @@ You can also get the version hash if necessary :
 
 ## Customizing the data
 
-This tool works by using what is called a provider json file, this file contains all the games, versions and hashes for each version, the default file is hosted [here](https://ena.escartem.moe/hoyodl/data.json), but you may want to also make your own to add custom games or add missing version (in case I forget to add the latest ones for example)
+This tool works by using what is called a provider json file, this file contains all the games, versions and hashes for each version, the default file is hosted [here](https://raw.githubusercontent.com/umaichanuwu/meta/master/hoyodata.json), but you may want to also make your own to add custom games or add missing version. In theory this file is self updating everytime a game update but just in case this options is available.
 
 To do so, create a json file in the same structure as the official one, host it wherever you want and pass the url to it when initializing the tool :
 

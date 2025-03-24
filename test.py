@@ -13,7 +13,7 @@ dl = test.downloadFile(file)
 # 	for chunk in dl.iter_content(chunk_size=8192):
 # 		f.write(chunk)
 
-block = "35323818"
+block = "00/35323818"
 dl = test.downloadBlock(block)
 
 # with open(block, "wb") as f:
@@ -23,6 +23,11 @@ dl = test.downloadBlock(block)
 # with open(block, "wb") as f:
 #     f.write(dl.content)
 
-print(test.getAllBlockFiles())
+print(test.getAllCutscenesFiles())
+
+test.setGame("nap")
+test.setVersion("1.5")
+
+print(test.getAllCutscenesFiles())
 # test._fetchFilesIndex()
 # print(test.filesIndex)

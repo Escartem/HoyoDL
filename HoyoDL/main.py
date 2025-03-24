@@ -150,7 +150,7 @@ class HoyoDL:
 		suffix = "th" if 11 <= dt.day <= 13 else {1: "st", 2: "nd", 3: "rd"}.get(dt.day % 10, "th")
 		return f"{dt.strftime('%B')} {day}{suffix}, {dt.year} at {dt.strftime('%H:%M:%S')}"
 
-	def getFileURL(self, path):
+	def getFileURL(self, path: str) -> str:
 		self._setupCheck()
 		data = self.data[self.game]
 		url = f'{data["scatterURL"].replace("$0", data["hashes"][self.version])}/{path}'
@@ -160,19 +160,19 @@ class HoyoDL:
 	### Files index ###
 	###################
 
-	def getAllBlockFiles(self):
+	def getAllBlockFiles(self) -> list:
 		self._setupCheck()
 		self._fetchFilesIndex()
 		blocks = self._filteredFilesBase("blocksRef")
 		return blocks
 
-	def getAllAudioFiles(self):
+	def getAllAudioFiles(self) -> list:
 		self._setupCheck()
 		self._fetchFilesIndex()
 		files = self._filteredFilesBase("audioRef")
 		return files
 
-	def getAllCutscenesFiles(self):
+	def getAllCutscenesFiles(self) -> list:
 		self._setupCheck()
 		self._fetchFilesIndex()
 		files = self._filteredFilesBase("cutscenesRef")

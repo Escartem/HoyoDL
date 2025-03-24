@@ -1,4 +1,4 @@
-from HoyoDL import HoyoDL
+import HoyoDL
 
 test = HoyoDL()
 test.setGame("hk4e")

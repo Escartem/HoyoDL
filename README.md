@@ -134,6 +134,16 @@ You can also get the date as number directly if you don't want the formatted one
 20220429112415
 ```
 
+It is also possible to get the latest version of the game :
+
+```py
+>>> client = HoyoDL(game="hk4e")
+>>> latest = client.getLatestVersion()
+>>> print(latest)
+"5.5"
+>>> client.setVersion(latest)
+```
+
 You can also get the version hash if necessary :
 
 ```py

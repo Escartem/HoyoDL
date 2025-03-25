@@ -5,7 +5,7 @@ long_description = (Path(__file__).parent / 'README.md').read_text()
 
 setup(
 	name='HoyoDL',
-	version='0.1.2',
+	version='0.1.3',
 	description='Download any game file at any version of Hoyo games',
 	author='Escartem',
 	author_email='escartem.github@gmail.com',

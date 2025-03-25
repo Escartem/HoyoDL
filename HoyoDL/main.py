@@ -18,7 +18,7 @@ class HoyoDL:
 		self.errors = {
 			"invalidGame": "Invalid game ! Available games are {0}",
 			"invalidVersion": "Invalid version ! It must be between {0} and {1}",
-			"noGame": "Please provide a game before the version !",
+			"noGame": "Please provide a game first !",
 			"jsonError": "Error getting data: {0}",
 			"invalidUrl": "Failed to fetch, network error or file may not exist !",
 			"indexNotAllowed": "Files index is not available for this game !",
@@ -138,6 +138,11 @@ class HoyoDL:
 	def getHash(self) -> str:
 		self._setupCheck()
 		return self.data[self.game]["hashes"][self.version]
+
+	def getLatestVersion(self) -> str:
+		if not self._isGameValid(self.game):
+			raise HoyoDLException(self.errors["noGame"])
+		return list(self.data[self.game]["hashes"].keys())[-1]
 
 	def getReleaseDate(self, raw: bool=False) -> str:
 		self._setupCheck()
